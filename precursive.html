@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soft Finger Hill Climb</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: #111;
+}
+
+.logo {
+    color: #00ffcc;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00ffcc;
+}
+
+.game-section {
+    text-align: center;
+    height: 90vh;
+    background: linear-gradient(to top, #87ceeb, #e0f7ff);
+    padding-top: 40px;
+}
+
+.game-section h1 {
+    margin-bottom: 20px;
+}
+
+
+.game-container {
+    position: relative;
+    width: 85%;
+    height: 350px;
+    margin: auto;
+    background: linear-gradient(#6ec6ff, #b3e5fc);
+    overflow: hidden;
+    border-radius: 15px;
+    border: 3px solid #333;
+}
+
+
+.hill {
+    position: absolute;
+    bottom: 0;
+    width: 200%;
+    height: 180px;
+    background: #2e8b57;
+    border-radius: 50% 50% 0 0;
+    animation: moveHill 6s linear infinite;
+}
+
+@keyframes moveHill {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+
+.car {
+    position: absolute;
+    bottom: 160px;
+    left: 80px;
+    width: 70px;
+    height: 35px;
+    background: #ff5733;
+    border-radius: 10px;
+    animation: bounce 1s infinite alternate;
+}
+
+/* Car Bounce Effect */
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+
+/* Button */
+.play-btn {
+    margin-top: 25px;
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    background: #00ffcc;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.play-btn:hover {
+    background: #00ccaa;
+    transform: scale(1.05);
+}
+</style>
+
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">Soft Finger</div>
+    <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Play</a></li>
+        <li><a href="#">Leaderboard</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="game-section">
+    <h1>Hill Climbing Game</h1>
+
+    <div class="game-container">
+        <div class="hill"></div>
+        <div class="car"></div>
+    </div>
+
+    <button class="play-btn">Start Game</button>
+</section>
+
+</body>
+</html>
