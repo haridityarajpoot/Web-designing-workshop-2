@@ -1,0 +1,9 @@
+ h1{
+    text-align: center;
+ }
+#box{
+    text-align: center;
+}
+#num1,#num2,#num3,#num4,#num5{
+    margin-bottom:20px;
+}
