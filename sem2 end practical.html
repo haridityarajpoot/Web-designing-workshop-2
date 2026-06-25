@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>End Term Practical</title>
+    <style>
+   body{
+    background-color: antiquewhite;
+    display: flex;
+    width:100vh;
+    justify-content: center;
+    align-items: center;
+   }
+h1{
+    background-color: blue;
+    border-radius: 5px ;
+        
+}
+   .main{
+    background-color: bisque;
+      width:500px;
+       border: black solid 2px;
+       border-radius: 5px;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       padding: 15px;
+
+    }
+    input{
+        width:150px;
+        border-radius: 5px;
+        padding:15px;
+        margin-top: 15px;
+    }
+    #btn{
+        padding: 15px;
+        margin:15px;
+        background-color: blue;
+        border-radius: 5px;
+    }
+
+    </style>
+</head>
+
+<body>
+    <div class="main">
+    <h1>student Calculator</h1>
+    <input id="id1" type="number"  placeholder="Enter marks">
+    <input id="id2" type="number"  placeholder="Enter marks">
+    <input id="id3" type="number"  placeholder="Enter marks">
+    <input id="id4" type="number"  placeholder="Enter marks">
+
+    <button  id="btn" onclick="stucalc()">Calculate result</button>
+    <p id="result"></p>
+    </div>
+
+
+
+        <script>
+            function stucalc(){
+            let inp1 = Number(document.querySelector("#id1").value);
+            let inp2 = Number(document.querySelector("#id2").value);
+            let inp3 = Number(document.querySelector("#id3").value);
+            let inp4 = Number(document.querySelector("#id4").value);
+
+             if (
+        inp1 < 0 || inp1 > 100 ||
+        inp2 < 0 || inp2 > 100 ||
+        inp3 < 0 || inp3 > 100 ||
+        inp4 < 0 || inp4 > 100
+    ) {
+        alert("Please enter marks between 0 and 100 only!");
+        return;
+    }
+
+                let sum = inp1 + inp2 + inp3 + inp4;
+                let percentage = (sum / 400) * 100;
+
+
+                document.querySelector("#result").innerText =
+                 "Total Marks = " + sum +
+                 "\nPercentage = " + percentage.toFixed(2) + "%";
+            }
+           
+
+        </script>
+
+</body>
+</html>
